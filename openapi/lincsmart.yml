@@ -1,0 +1,109 @@
+openapi: 3.1.0
+info:
+  title: Lincoln Financial LincSmart APIs
+  description: >-
+    Lincoln Financial provides LincSmart APIs for benefits administration
+    integration. The platform includes Enrollment, EOI (Evidence of
+    Insurability), and Plan Design APIs that enable real-time data sync
+    between Lincoln Financial and benefits administration platforms such
+    as ADP, Workday, Businessolver, bswift, and Benefitfocus.
+  version: 1.0.0
+  contact:
+    name: Lincoln Financial
+    url: https://www.lincolnfinancial.com
+servers:
+  - url: https://www.lincolnfinancial.com
+    description: Lincoln Financial
+paths:
+  /enrollment:
+    post:
+      operationId: syncEnrollment
+      summary: Sync Enrollment Data
+      description: >-
+        Syncs employee elections and demographic information in real time,
+        eliminating the need for weekly batch files.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employeeId:
+                  type: string
+                  description: The employee identifier.
+                elections:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      benefitType:
+                        type: string
+                      coverageAmount:
+                        type: number
+                      effectiveDate:
+                        type: string
+                        format: date
+      responses:
+        '200':
+          description: Enrollment data synced successfully.
+        '401':
+          description: Unauthorized.
+  /eoi:
+    post:
+      operationId: submitEOI
+      summary: Submit Evidence of Insurability
+      description: >-
+        Sends benefits enrollment decisions to employee platforms in real
+        time, eliminating manual work and paper forms.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employeeId:
+                  type: string
+                decision:
+                  type: string
+                  enum:
+                    - approved
+                    - denied
+                    - pending
+      responses:
+        '200':
+          description: EOI decision submitted successfully.
+        '401':
+          description: Unauthorized.
+  /plan-design:
+    get:
+      operationId: getPlanDesign
+      summary: Get Plan Design Information
+      description: >-
+        Retrieves plan information including rules and rates from Lincoln
+        to flow into benefits administration platforms automatically.
+      parameters:
+        - name: planId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response with plan design data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  planId:
+                    type: string
+                  planName:
+                    type: string
+                  rules:
+                    type: object
+                  rates:
+                    type: object
+        '401':
+          description: Unauthorized.
