@@ -1,152 +1,77 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Lincoln National
+providerId: lincoln-national
+created: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - FinOps
+  - FOCUS
+  - Annuities
+  - Benefits
+  - Insurance
+  - Retirement
+description: 'FOCUS-aligned FinOps scaffold for Lincoln Financial / Lincoln National: partner-only LincSmart
+  API access with no public per-call pricing. Consumer-side telemetry tracks against the LincSmart partner
+  agreement, not metered API invoices.'
+notes: Pricing is partner-contract driven. Meters describe the consumer-side observation surface.
+sources:
+  - https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-provider: Lincoln National
-providerId: lincoln-national
-publisherName: Lincoln National
-serviceCategory: API
-created: '2026-05-04'
-modified: '2026-05-04'
-tags:
-  - Annuities
-  - Benefits
-  - Enrollment
-  - HR
-  - Insurance
-  - Retirement
-  - FinOps
-  - Cost Management
-  - FOCUS
-description: FinOps framework definition for the Lincoln National API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+publisherName: Lincoln National Corporation
+serviceCategory: Insurance / Retirement / API
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Custom Contract
+  billingFrequency: Per-Invoice
   billingCurrency: USD
   chargeCategories:
     - Usage
     - Purchase
-    - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
-  ServiceName: Lincoln National
-  ServiceCategory: Developer Tools / API
-  ProviderName: Lincoln National
-  PublisherName: Lincoln National
-  InvoiceIssuerName: Lincoln National
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  ServiceName: Lincoln Financial LincSmart API
+  ServiceCategory: Insurance / Retirement / API
+  ProviderName: Lincoln Financial
+  PublisherName: Lincoln National Corporation
+  InvoiceIssuerName: Lincoln National Corporation
   BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
   - name: api_requests
-    description: Count of billable API requests
     unit: request
     aggregation: sum
     dimensions:
       - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+      - environment
+      - partner
+  - name: enrollment_events
+    unit: event
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+      - employer
+      - product
+  - name: eoi_decisions
+    unit: decision
     aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Lincoln Financial LincSmart Enrollment API
-    baseURL: https://www.lincolnfinancial.com
-    tags:
-      - Benefits
-      - Enrollment
-      - HR
-      - Insurance
-    serviceName: Lincoln Financial LincSmart Enrollment API
-    serviceCategory: API
-  - name: Lincoln Financial LincSmart EOI Solution API
-    baseURL: https://www.lincolnfinancial.com
-    tags:
-      - Benefits
-      - Evidence of Insurability
-      - HR
-      - Insurance
-    serviceName: Lincoln Financial LincSmart EOI Solution API
-    serviceCategory: API
-  - name: Lincoln Financial LincSmart Plan Design API
-    baseURL: https://www.lincolnfinancial.com
-    tags:
-      - Benefits
-      - HR
-      - Insurance
-      - Plan Design
-    serviceName: Lincoln Financial LincSmart Plan Design API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+principles:
+  - name: Visibility
+    description: Use the LincSmart real-time sync events plus your own observability stack to track enrollment,
+      EOI, and leave activity volumes; Lincoln does not expose a public usage API.
+  - name: Allocation
+    description: Tag calls by employer group, product (life, disability, retirement), and benefits platform
+      partner so the LincSmart contract draw can be allocated correctly.
+  - name: Optimization
+    description: Replace weekly batch files with LincSmart real-time sync; throttle annual-enrollment
+      bursts via partner-coordinated windows.
+  - name: Accountability
+    description: Assign a LincSmart partner owner who reviews enrollment-event throughput and contract
+      consumption against quarterly benefit cycles.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
