@@ -1,21 +1,23 @@
 naftiko: 1.0.0-alpha2
 info:
   label: Lincoln Financial LincSmart APIs
-  description: Lincoln Financial provides LincSmart APIs for benefits administration integration. The platform includes Enrollment,
-    EOI (Evidence of Insurability), and Plan Design APIs that enable real-time data sync between Lincoln Financial and benefits
-    administration platforms such as ADP, Workday, Businessolver, bswift, and Benefitfocus.
+  description: 'Lincoln Financial LincSmart APIs. 3 operations. Lead operation: Sync Enrollment Data. Self-contained Naftiko
+    capability covering one Lincoln National business surface.'
   tags:
-  - Lincoln
-  - National
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Lincoln National
+  - Lincoln Financial LincSmart APIs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    LINCOLN_NATIONAL_API_KEY: LINCOLN_NATIONAL_API_KEY
 capability:
   consumes:
   - type: http
     namespace: lincoln-national
     baseUri: https://www.lincolnfinancial.com
-    description: Lincoln Financial LincSmart APIs HTTP API.
+    description: Lincoln Financial LincSmart APIs business capability. Self-contained, no shared references.
     resources:
     - name: enrollment
       path: /enrollment
@@ -28,6 +30,12 @@ capability:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
     - name: eoi
       path: /eoi
       operations:
@@ -39,85 +47,106 @@ capability:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
     - name: plan-design
       path: /plan-design
       operations:
       - name: getplandesign
         method: GET
         description: Get Plan Design Information
-        inputParameters:
-        - name: planId
-          in: query
-          type: string
-          required: true
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: planId
+          in: query
+          type: string
+          required: true
   exposes:
   - type: rest
-    port: 8080
     namespace: lincoln-national-rest
-    description: REST adapter for Lincoln Financial LincSmart APIs.
+    port: 8080
+    description: REST adapter for Lincoln Financial LincSmart APIs. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
     resources:
-    - path: /enrollment
-      name: syncenrollment
+    - path: /v1/enrollment
+      name: enrollment
+      description: REST surface for enrollment.
       operations:
       - method: POST
         name: syncenrollment
         description: Sync Enrollment Data
         call: lincoln-national.syncenrollment
+        with:
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /eoi
-      name: submiteoi
+    - path: /v1/eoi
+      name: eoi
+      description: REST surface for eoi.
       operations:
       - method: POST
         name: submiteoi
         description: Submit Evidence of Insurability
         call: lincoln-national.submiteoi
+        with:
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /plan-design
-      name: getplandesign
+    - path: /v1/plan-design
+      name: plan-design
+      description: REST surface for plan-design.
       operations:
       - method: GET
         name: getplandesign
         description: Get Plan Design Information
         call: lincoln-national.getplandesign
+        with:
+          planId: rest.planId
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
-    port: 9090
     namespace: lincoln-national-mcp
+    port: 9090
     transport: http
-    description: MCP adapter for Lincoln Financial LincSmart APIs for AI agent use.
+    description: MCP adapter for Lincoln Financial LincSmart APIs. One tool per consumed operation, routed inline through
+      this capability's consumes block.
     tools:
-    - name: syncenrollment
+    - name: sync-enrollment-data
       description: Sync Enrollment Data
       hints:
         readOnly: false
         destructive: false
         idempotent: false
       call: lincoln-national.syncenrollment
+      with:
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: submiteoi
+    - name: submit-evidence-insurability
       description: Submit Evidence of Insurability
       hints:
         readOnly: false
         destructive: false
         idempotent: false
       call: lincoln-national.submiteoi
+      with:
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: getplandesign
+    - name: get-plan-design-information
       description: Get Plan Design Information
       hints:
         readOnly: true
@@ -126,11 +155,6 @@ capability:
       call: lincoln-national.getplandesign
       with:
         planId: tools.planId
-      inputParameters:
-      - name: planId
-        type: string
-        description: planId
-        required: true
       outputParameters:
       - type: object
         mapping: $.
