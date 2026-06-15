@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lincoln Financial LincSmart APIs",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sync Enrollment Data",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.lincolnfinancial.com/enrollment",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Syncs employee elections and demographic information in real time, eliminating the need for weekly batch files."
+    },
+    {
+      "info": {
+        "name": "Submit Evidence of Insurability",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.lincolnfinancial.com/eoi",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Sends benefits enrollment decisions to employee platforms in real time, eliminating manual work and paper forms."
+    },
+    {
+      "info": {
+        "name": "Get Plan Design Information",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.lincolnfinancial.com/plan-design",
+        "params": [
+          {
+            "name": "planId",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Retrieves plan information including rules and rates from Lincoln to flow into benefits administration platforms automatically."
+    }
+  ],
+  "bundled": true
+}
