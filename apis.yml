@@ -77,6 +77,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/lincoln-national-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/lincolnfinancial
   - type: Website
