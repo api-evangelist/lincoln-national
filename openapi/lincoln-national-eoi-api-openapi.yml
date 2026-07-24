@@ -1,0 +1,41 @@
+openapi: 3.1.0
+info:
+  title: Lincoln Financial LincSmart APIs Enrollment Eoi API
+  description: Lincoln Financial provides LincSmart APIs for benefits administration integration. The platform includes Enrollment, EOI (Evidence of Insurability), and Plan Design APIs that enable real-time data sync between Lincoln Financial and benefits administration platforms such as ADP, Workday, Businessolver, bswift, and Benefitfocus.
+  version: 1.0.0
+  contact:
+    name: Lincoln Financial
+    url: https://www.lincolnfinancial.com
+servers:
+- url: https://www.lincolnfinancial.com
+  description: Lincoln Financial
+tags:
+- name: Eoi
+paths:
+  /eoi:
+    post:
+      operationId: submitEOI
+      summary: Submit Evidence of Insurability
+      description: Sends benefits enrollment decisions to employee platforms in real time, eliminating manual work and paper forms.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                employeeId:
+                  type: string
+                decision:
+                  type: string
+                  enum:
+                  - approved
+                  - denied
+                  - pending
+      responses:
+        '200':
+          description: EOI decision submitted successfully.
+        '401':
+          description: Unauthorized.
+      tags:
+      - Eoi
