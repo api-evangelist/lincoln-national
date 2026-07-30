@@ -5,7 +5,19 @@ description: >-
   offering annuities, retirement plan services, life insurance, and group protection products. The company provides
   solutions for employers, brokers, and retirement professionals through its LincSmart platform of API integrations.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/lincoln-national.png
 tags:
   - Annuities
   - Benefits
@@ -19,63 +31,60 @@ created: '2026-03-21'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: lincoln-national:lincsmart-enrollment-api
-    name: Lincoln Financial LincSmart Enrollment API
-    description: >-
-      The LincSmart Enrollment API ensures that employee elections and demographic information are synced in real time,
-      eliminating lengthy setup time for weekly batch files.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
-    baseURL: https://www.lincolnfinancial.com
-    tags:
-      - Benefits
-      - Enrollment
-      - HR
-      - Insurance
-    properties:
-      - type: Documentation
-        url: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml
-  - aid: lincoln-national:lincsmart-eoi-api
-    name: Lincoln Financial LincSmart EOI Solution API
-    description: >-
-      The LincSmart EOI Solution API sends benefits enrollment decisions to employee platforms in real time, eliminating
-      manual work and paper forms for evidence of insurability.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html
-    baseURL: https://www.lincolnfinancial.com
-    tags:
-      - Benefits
-      - Evidence of Insurability
-      - HR
-      - Insurance
-    properties:
-      - type: Documentation
-        url: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml
-  - aid: lincoln-national:lincsmart-plan-design-api
-    name: Lincoln Financial LincSmart Plan Design API
-    description: >-
-      The LincSmart Plan Design API allows plan information like rules and rates to flow from Lincoln to benefits
-      administration platforms automatically.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html
-    baseURL: https://www.lincolnfinancial.com
-    tags:
-      - Benefits
-      - HR
-      - Insurance
-      - Plan Design
-    properties:
-      - type: Documentation
-        url: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml
+- aid: lincoln-national:lincoln-national-enrollment-api
+  name: Lincoln National Enrollment API
+  description: The Enrollment API from Lincoln National — 1 operation(s) for enrollment.
+  humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
+  baseURL: https://www.lincolnfinancial.com
+  tags:
+  - Enrollment
+  properties:
+  - type: OpenAPI
+    url: openapi/lincoln-national-enrollment-api-openapi.yml
+  - type: Documentation
+    url: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
+  - type: Documentation
+    url: >-
+      https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html
+  - type: Documentation
+    url: >-
+      https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html
+- aid: lincoln-national:lincoln-national-eoi-api
+  name: Lincoln National Eoi API
+  description: The Eoi API from Lincoln National — 1 operation(s) for eoi.
+  humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
+  baseURL: https://www.lincolnfinancial.com
+  tags:
+  - Eoi
+  properties:
+  - type: OpenAPI
+    url: openapi/lincoln-national-eoi-api-openapi.yml
+  - type: Documentation
+    url: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
+  - type: Documentation
+    url: >-
+      https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html
+  - type: Documentation
+    url: >-
+      https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html
+- aid: lincoln-national:lincoln-national-plan-design-api
+  name: Lincoln National Plan Design API
+  description: The Plan Design API from Lincoln National — 1 operation(s) for plan design.
+  humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
+  baseURL: https://www.lincolnfinancial.com
+  tags:
+  - Plan Design
+  properties:
+  - type: OpenAPI
+    url: openapi/lincoln-national-plan-design-api-openapi.yml
+  - type: Documentation
+    url: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
+  - type: Documentation
+    url: >-
+      https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html
+  - type: Documentation
+    url: >-
+      https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html
 common:
   - type: AgenticAccess
     url: agentic-access/lincoln-national-agentic-access.yml
