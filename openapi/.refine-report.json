@@ -1,0 +1,18 @@
+{
+  "provider": "lincoln-national",
+  "sources": [
+    "lincoln-national-enrollment-api-openapi.yml",
+    "lincoln-national-eoi-api-openapi.yml",
+    "lincoln-national-plan-design-api-openapi.yml"
+  ],
+  "outputs": [
+    "lincoln-national-enrollment-api-openapi.yml",
+    "lincoln-national-eoi-api-openapi.yml",
+    "lincoln-national-plan-design-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
