@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lincoln Financial LincSmart APIs Enrollment Plan Design API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Plan Design",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Plan Design Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.lincolnfinancial.com/plan-design",
+            "params": [
+              {
+                "name": "planId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves plan information including rules and rates from Lincoln to flow into benefits administration platforms automatically."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

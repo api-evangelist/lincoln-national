@@ -1,0 +1,150 @@
+{
+  "item": [
+    {
+      "id": "e8f32d81-1a53-4140-8273-13cbd46fc933",
+      "name": "Eoi",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c6ccc2b1-776a-41f3-917f-25a8077d12c0",
+          "name": "Submit Evidence of Insurability",
+          "request": {
+            "name": "Submit Evidence of Insurability",
+            "description": {
+              "content": "Sends benefits enrollment decisions to employee platforms in real time, eliminating manual work and paper forms.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "eoi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employeeId\": \"<string>\",\n  \"decision\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e39a71f7-17ed-4bbe-b1e8-7d05ed019edb",
+              "name": "EOI decision submitted successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "eoi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employeeId\": \"<string>\",\n  \"decision\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fc8b17a8-057a-4d83-bfef-5c57a4063436",
+              "name": "Unauthorized.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "eoi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"employeeId\": \"<string>\",\n  \"decision\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.lincolnfinancial.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a6821f70-4aaa-4df2-8d65-e30e94761668",
+    "name": "Lincoln Financial LincSmart APIs Enrollment Eoi API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Lincoln Financial provides LincSmart APIs for benefits administration integration. The platform includes Enrollment, EOI (Evidence of Insurability), and Plan Design APIs that enable real-time data sync between Lincoln Financial and benefits administration platforms such as ADP, Workday, Businessolver, bswift, and Benefitfocus.\n\nContact Support:\n Name: Lincoln Financial",
+      "type": "text/plain"
+    }
+  }
+}

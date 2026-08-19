@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lincoln Financial LincSmart APIs Enrollment API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Enrollment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sync Enrollment Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.lincolnfinancial.com/enrollment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Syncs employee elections and demographic information in real time, eliminating the need for weekly batch files."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

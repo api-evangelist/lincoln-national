@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Lincoln Financial LincSmart APIs Enrollment Eoi API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Eoi",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit Evidence of Insurability",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.lincolnfinancial.com/eoi",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends benefits enrollment decisions to employee platforms in real time, eliminating manual work and paper forms."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
