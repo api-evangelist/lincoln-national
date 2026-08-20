@@ -55,6 +55,8 @@ apis:
   humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
   baseURL: https://www.lincolnfinancial.com
   tags:
+  - EOI
+  tags_raw:
   - Eoi
   properties:
   - type: OpenAPI
