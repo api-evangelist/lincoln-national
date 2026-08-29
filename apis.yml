@@ -99,6 +99,9 @@ apis:
     url: >-
       https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html
 common:
+  - type: CapabilityMap
+    url: capabilities/lincoln-national-capability-edges.yml
+    name: Lincoln National Business Capability Map
   - type: AgenticAccess
     url: agentic-access/lincoln-national-agentic-access.yml
   - type: DomainSecurity

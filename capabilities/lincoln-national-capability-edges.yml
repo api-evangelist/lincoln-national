@@ -1,0 +1,38 @@
+slug: lincoln-national
+provider: Lincoln National
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Enrollment
+  spec_file: lincoln-national-enrollment-api-openapi.yml
+  capability_id: BC-300.30
+  capability_id_l1: BC-300
+  capability_name: Compensation & Benefits Management
+  confidence: 0.8
+  evidence: 'POST /enrollment syncEnrollment ''Sync Enrollment Data''; description: ''LincSmart APIs for
+    benefits administration integration'''
+  reason: The operation synchronises benefits enrollment data with benefits administration platforms (ADP,
+    Workday, Benefitfocus), which realises benefits administration within Human Capital Management regardless
+    of the insurer selling it.
+- tag: Eoi
+  spec_file: lincoln-national-eoi-api-openapi.yml
+  capability_id: BC-300.30
+  capability_id_l1: BC-300
+  capability_name: Compensation & Benefits Management
+  confidence: 0.7
+  evidence: POST /eoi submitEOI Submit Evidence of Insurability — "LincSmart APIs for benefits administration
+    integration"
+  reason: Evidence of Insurability submission is part of group insurance benefits enrolment integrated
+    with benefits administration platforms (ADP, Workday). In the Banking frame, the closest honest capability
+    is Compensation & Benefits Management under Human Capital Management. Confidence moderated because
+    the vendor is an insurer and the frame lacks insurance underwriting capabilities.
