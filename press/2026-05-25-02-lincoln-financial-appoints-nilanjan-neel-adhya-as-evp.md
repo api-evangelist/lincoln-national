@@ -1,7 +1,9 @@
 ---
 title: Lincoln Financial Appoints Nilanjan (Neel) Adhya as EVP ...
 url: https://www.businesswire.com/news/home/20251204014069/en/Lincoln-Financial-Appoints-Nilanjan-Neel-Adhya-as-EVP-Chief-AI-Data-and-Analytics-Officer
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Lincoln National" press release artificial intelligence'
 position: 2
 source: serpapi-google

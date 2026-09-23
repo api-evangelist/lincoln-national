@@ -1,7 +1,9 @@
 ---
 title: Core earnings rise as Lincoln Financial (NYSE - LNC
 url: https://www.stocktitan.net/sec-filings/LNC/8-k-lincoln-national-corp-reports-material-event-87aa44acf693.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Lincoln National" press release artificial intelligence'
 position: 3
 source: serpapi-google

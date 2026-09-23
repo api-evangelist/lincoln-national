@@ -1,7 +1,9 @@
 ---
 title: Lincoln Financial Group expands partnership to support ...
 url: https://www.lincolnfinancial.com/public/aboutus/newsroom/pressreleases/EvolutionIQ
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Lincoln National" press release artificial intelligence'
 position: 1
 source: serpapi-google

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Lincoln Financial LincSmart APIs Enrollment Plan Design API
+  title: Lincoln Financial LincSmart Plan Design API
   description: Lincoln Financial provides LincSmart APIs for benefits administration integration. The platform includes Enrollment, EOI (Evidence of Insurability), and Plan Design APIs that enable real-time data sync between Lincoln Financial and benefits administration platforms such as ADP, Workday, Businessolver, bswift, and Benefitfocus.
   version: 1.0.0
   contact:

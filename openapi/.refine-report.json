@@ -1,9 +1,7 @@
 {
   "provider": "lincoln-national",
   "sources": [
-    "lincoln-national-enrollment-api-openapi.yml",
-    "lincoln-national-eoi-api-openapi.yml",
-    "lincoln-national-plan-design-api-openapi.yml"
+    "_original/lincoln-national-openapi.yml"
   ],
   "outputs": [
     "lincoln-national-enrollment-api-openapi.yml",
@@ -13,6 +11,20 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "lincoln-national-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "lincoln-national-openapi.yml: tagged paths POST /enrollment -> Enrollment",
+    "lincoln-national-openapi.yml: tagged paths POST /eoi -> Eoi",
+    "lincoln-national-openapi.yml: tagged paths GET /plan-design -> Plan Design",
+    "lincoln-national-openapi.yml: declared missing tag: Enrollment",
+    "lincoln-national-openapi.yml: declared missing tag: Eoi",
+    "lincoln-national-openapi.yml: declared missing tag: Plan Design",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "lincoln-national-enrollment-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lincoln-national-eoi-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "lincoln-national-plan-design-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
