@@ -37,6 +37,7 @@ tags:
   - Insurance
   - Retirement
   - Fortune 500
+  - Employee Benefits
 tags_raw:
   - Annuities
   - Benefits
@@ -45,6 +46,7 @@ tags_raw:
   - Insurance
   - Retirement
   - Fortune 500
+  - Employee Benefits
 url: https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/apis.yml
 created: '2026-03-21'
 modified: '2026-05-19'
@@ -54,7 +56,6 @@ apis:
   name: Lincoln National Enrollment API
   description: The Enrollment API from Lincoln National — 1 operation(s) for enrollment.
   humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
-  baseURL: https://www.lincolnfinancial.com
   tags:
   - Enrollment
   properties:
@@ -72,7 +73,6 @@ apis:
   name: Lincoln National Eoi API
   description: The Eoi API from Lincoln National — 1 operation(s) for eoi.
   humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
-  baseURL: https://www.lincolnfinancial.com
   tags:
   - EOI
   tags_raw:
@@ -92,7 +92,6 @@ apis:
   name: Lincoln National Plan Design API
   description: The Plan Design API from Lincoln National — 1 operation(s) for plan design.
   humanURL: https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html
-  baseURL: https://www.lincolnfinancial.com
   tags:
   - Plan Design
   properties:
