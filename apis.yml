@@ -106,6 +106,12 @@ apis:
     url: >-
       https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html
 common:
+  - type: Plans
+    url: plans/lincoln-national-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/lincoln-national-rate-limits.yml
+  - type: FinOps
+    url: finops/lincoln-national-finops.yml
   - type: CapabilityMap
     url: capabilities/lincoln-national-capability-edges.yml
     name: Lincoln National Business Capability Map
