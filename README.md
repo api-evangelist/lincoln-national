@@ -1,4 +1,4 @@
-# Lincoln National (lincoln-national)
+# Lincoln National
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,100 +66,116 @@
 
 Lincoln National Corporation, operating as Lincoln Financial Group, is a diversified financial services company offering annuities, retirement plan services, life insurance, and group protection products. The company provides solutions for employers, brokers, and retirement professionals through its LincSmart platform of API integrations.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/apis.yml)
+**Areas:** Annuities · Benefits · Enrollment · Human Resources · Insurance · Retirement · Fortune 500 · Employee Benefits
 
-## Scope
+## Lincoln National on APIs.io
 
-- **Type:** Index
+Everything profiled for Lincoln National is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lincoln-national/](https://apis.io/providers/lincoln-national/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Annuities
-- Benefits
-- Enrollment
-- HR
-- Insurance
-- Retirement
+- [Lincoln National Enrollment API](https://apis.io/apis/lincoln-national/lincoln-national-enrollment-api/) — The Enrollment API from Lincoln National — 1 operation(s) for enrollment.
+- [Lincoln National Eoi API](https://apis.io/apis/lincoln-national/lincoln-national-eoi-api/) — The Eoi API from Lincoln National — 1 operation(s) for eoi.
+- [Lincoln National Plan Design API](https://apis.io/apis/lincoln-national/lincoln-national-plan-design-api/) — The Plan Design API from Lincoln National — 1 operation(s) for plan design.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Lincoln Financial LincSmart Enrollment API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The LincSmart Enrollment API ensures that employee elections and demographic information are synced in real time, eliminating lengthy setup time for weekly batch files.
+- [Lincoln National Agentic Access](https://apis.io/agentic-access/lincoln-national/lincoln-national-agentic-access/)
 
-- **Human URL:** [https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html](https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html)
-- **Base URL:** `https://www.lincolnfinancial.com`
+#### Collections (4)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Benefits
-- Enrollment
-- HR
-- Insurance
+- [Lincoln Financial LincSmart APIs](https://apis.io/collections/lincoln-national/open-lincoln-national/)
+- [Lincoln Financial LincSmart APIs Enrollment API](https://apis.io/collections/lincoln-national/open-lincoln-national-enrollment-api/)
+- [Lincoln Financial LincSmart APIs Enrollment Eoi API](https://apis.io/collections/lincoln-national/open-lincoln-national-eoi-api/)
+- [Lincoln Financial LincSmart APIs Enrollment Plan Design API](https://apis.io/collections/lincoln-national/open-lincoln-national-plan-design-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/lincoln-national.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/lincoln-national.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### Lincoln Financial LincSmart EOI Solution API
+- [Lincoln National Domain Security](https://apis.io/security/lincoln-national/lincoln-national-domain-security/)
 
-The LincSmart EOI Solution API sends benefits enrollment decisions to employee platforms in real time, eliminating manual work and paper forms for evidence of insurability.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html](https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html)
-- **Base URL:** `https://www.lincolnfinancial.com`
+Published plans, tiers and prices.
 
-#### Tags
+- [Lincoln National Plans Pricing](https://apis.io/plans/lincoln-national/lincoln-national-plans-pricing/)
 
-- Benefits
-- Evidence of Insurability
-- HR
-- Insurance
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/eoi.html)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/lincoln-national.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/lincoln-national.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Lincoln National Rate Limits](https://apis.io/rate-limits/lincoln-national/lincoln-national-rate-limits/)
 
-### Lincoln Financial LincSmart Plan Design API
+#### FinOps (1)
 
-The LincSmart Plan Design API allows plan information like rules and rates to flow from Lincoln to benefits administration platforms automatically.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html](https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html)
-- **Base URL:** `https://www.lincolnfinancial.com`
+- [Lincoln National Finops](https://apis.io/finops/lincoln-national/lincoln-national-finops/)
 
-#### Tags
+## Where to find this API
 
-- Benefits
-- HR
-- Insurance
-- Plan Design
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/assets/resources/info/plan.html)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/lincoln-national.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/lincoln-national.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/lincolnfinancial)
 - [Website](https://www.lincolnfinancial.com)
-- [Linc Smart Platform](https://www.lincolnfinancial.com/public/static/digitalbrochure/gp/lincsmart/index.html)
-- [Portal](https://www.mylincolnportal.com)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/lincoln-national/refs/heads/main/openapi/lincoln-national-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 20.6** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 47.1 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.3** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lincoln-national/](https://apis.io/providers/lincoln-national/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Lincoln National: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lincoln-national/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
